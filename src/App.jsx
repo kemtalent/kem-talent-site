@@ -334,22 +334,22 @@ function HomePage({ setPage }) {
             }}
           >
             <div style={{ fontFamily: displayFont, fontSize: "1.5rem", fontWeight: 600 }}>
-              Thoughtful hiring.
+              Better hiring starts here.
             </div>
             <p style={{ fontFamily: bodyFont, color: "#C7D0C9", fontSize: "0.95rem", lineHeight: 1.7, marginTop: "0.75rem" }}>
               The best recruiting doesn't feel transactional. It creates clarity for hiring
-              teams, confidence for candidates, and momentum for growing companies.
+              teams, trust for candidates and momentum for growing companies.
             </p>
             <div style={{ height: "1px", backgroundColor: "#3A4B41", margin: "1.5rem 0" }} />
             <div style={{ fontFamily: bodyFont, color: "#8FA396", fontSize: "0.8rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              The KEM Talent approach
+              In practice
             </div>
             <ul style={{ marginTop: "0.6rem", display: "flex", flexDirection: "column", gap: "0.45rem" }}>
               {[
-                "Thoughtful search.",
-                "Transparent communication.",
-                "Candidate experiences that strengthen your brand.",
-                "Partnership built around judgment — not just process.",
+                "Strategic search.",
+                "Clear communication.",
+                "Exceptional candidate experience.",
+                "Hiring decisions grounded in judgment.",
               ].map((line) => (
                 <li key={line} style={{ fontFamily: bodyFont, color: "#C7D0C9", fontSize: "0.95rem", lineHeight: 1.5 }}>
                   {line}
@@ -369,8 +369,8 @@ function HomePage({ setPage }) {
                 Two ways to work together
               </h2>
               <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1rem", marginTop: "0.5rem", maxWidth: "34rem" }}>
-                Some engagements run best as a standing partnership. Others are a clean
-                one-off project. KEM Talent is built to do both.
+                Some engagements run best as a standing partnership, while others are a
+                clean one-off project. KEM Talent is built to do both.
               </p>
             </div>
             <div
@@ -467,22 +467,22 @@ function AboutPage() {
     {
       org: "Consumer Reports",
       role: "Early career",
-      desc: "Where Kelli cut her teeth in HR as Chief of Staff to the talented People leaders at this storied organization.",
+      desc: "Learned from exceptional leaders.",
     },
     {
       org: "ZRG Partners",
-      role: "Executive Search",
-      desc: "Retained search across media, nonprofit, financial services, and retail — learning the discipline of a true search process.",
+      role: "Executive search",
+      desc: "Learned the discipline of agency recruiting.",
     },
     {
       org: "RubiconMD",
       role: "Founding Recruiter → Director, HRBP",
-      desc: "First dedicated recruiter, progressing from Manager to Associate Director to Director HRBP. Present through the company's acquisition by Oak Street Health, later CVS Health.",
+      desc: "Built a recruiting function from scratch.",
     },
     {
       org: "IntusCare",
       role: "Founding Recruiter | Sr Dir, Talent Acquisition & Strategy",
-      desc: "Built and led the talent function through a period of rapid growth.",
+      desc: "Scaled hiring through rapid growth.",
     },
   ];
 
@@ -509,14 +509,14 @@ function AboutPage() {
             Principal, KEM Talent
           </div>
           <h1 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "2.5rem", color: colors.ink, marginTop: "1.25rem" }}>
-            She's sat on the inside of the hiring process — as the whole department.
+            Most growing companies don't need a recruiting agency — they need a talent partner.
           </h1>
           <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1.05rem", lineHeight: 1.75, marginTop: "1.25rem" }}>
-            KEM Talent exists because most companies between 25 and a few hundred people
-            don't need a full talent acquisition department — they may need someone who's
-            already built one, who can walk in and run recruiting like it's their own. That's
-            what Kelli has done twice now, as the founding or first dedicated recruiter inside
-            fast-moving healthtech startups.
+            KEM Talent exists because growing companies often find themselves in the
+            middle. They're beyond founder-led hiring but not ready for a full internal
+            talent acquisition function. What they need is experienced recruiting
+            leadership that can step in, build structure, execute the work, and leave the
+            hiring process stronger than they found it.
           </p>
         </div>
       </section>
@@ -524,7 +524,7 @@ function AboutPage() {
       <section>
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.6rem", color: colors.ink }}>
-            Where Kelli has built
+            The experience behind KEM Talent.
           </h2>
           <div className="flex flex-col mt-8" style={{ borderLeft: `2px solid ${colors.boneDeep}` }}>
             {timeline.map((t) => (
@@ -559,13 +559,13 @@ function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
           <div>
             <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.4rem", color: colors.cream }}>
-              What makes Kelli different
+              KEM Talent difference
             </h2>
             <ul className="flex flex-col gap-4 mt-5">
               {[
-                "Founding and sole-recruiter experience in healthtech — she's done the job with no team behind her.",
-                "Full-cycle range across all functions (commercial, technical, corporate) and levels (analyst and individual contributor through executive leadership).",
-                "She treats each candidate interaction as an opportunity to shape reputation and build advocates, not detractors.",
+                "Built for growing companies that need experienced recruiting leadership without building a full internal talent function.",
+                "Full-cycle recruiting across technical, commercial, clinical and corporate hiring, from early career through executive leadership.",
+                "Every candidate interaction is treated as an opportunity to strengthen your employer brand, not just fill a role.",
               ].map((t) => (
                 <li key={t} style={{ display: "flex", gap: "0.75rem" }}>
                   <span style={{ color: colors.brass, fontFamily: displayFont, fontWeight: 600 }}>—</span>
@@ -576,7 +576,7 @@ function AboutPage() {
           </div>
           <div>
             <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.4rem", color: colors.cream }}>
-              Tools Kelli works in
+              Technology that supports the work
             </h2>
             <div className="flex flex-wrap gap-2 mt-5">
               {["Juicebox AI", "Ashby", "Greenhouse", "Lever", "Radford / Aon", "LinkedIn Recruiter", "Claude", "ChatGPT", "Copilot", "Motion"].map((t) => (
