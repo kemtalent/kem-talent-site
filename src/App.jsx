@@ -275,7 +275,7 @@ function HomePage({ setPage }) {
                 fontWeight: 600,
               }}
             >
-              Fractional Recruiting & Talent Strategy
+              Modern Recruiting for Growing Teams
             </div>
             <h1
               style={{
@@ -290,9 +290,10 @@ function HomePage({ setPage }) {
               Talent strategy with sleeves rolled up.
             </h1>
             <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1.05rem", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: "32rem" }}>
-              KEM Talent partners with growing companies that need more than another
-              recruiter. Strategic hiring guidance, hands-on execution, and an experience
-              that candidates remember for the right reasons.
+              KEM Talent adapts to the way your business hires, not the other way around.
+              Whether you need strategic guidance, embedded recruiting support or help
+              filling a critical role, every engagement is tailored to your stage, goals
+              and team.
             </p>
             <div className="flex gap-4 mt-8">
               <button
