@@ -1,5 +1,18 @@
 import { useState } from "react";
 
+const FONT_LINK_ID = "kem-fonts";
+
+function useFonts() {
+  if (typeof document !== "undefined" && !document.getElementById(FONT_LINK_ID)) {
+    const link = document.createElement("link");
+    link.id = FONT_LINK_ID;
+    link.rel = "stylesheet";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap";
+    document.head.appendChild(link);
+  }
+}
+
 const colors = {
   ink: "#182620",
   inkSoft: "#33463B",
@@ -112,7 +125,7 @@ const SERVICES = {
     {
       name: "Embedded Recruiting",
       blurb:
-        "I plug into your team like a recruiter you hired, not a vendor you manage — running two or three open roles at a time inside your ATS, your Slack, your process.",
+        "Plugging into your team like a recruiter you hired, not a vendor you manage — running 2-3 open roles at a time inside your ATS, your Slack, your process.",
       fee: "Monthly retainer — $5,000/month",
       includes: [
         "Full-cycle ownership of active roles",
@@ -123,7 +136,7 @@ const SERVICES = {
     {
       name: "Recruiting Operations & TA Systems",
       blurb:
-        "A close look at your current hiring workflow and the data behind it — where candidates are dropping off, where the experience is falling flat, where recruiters are spending cycles that aren't producing better hires. Then a plan, and if you want it, the hands to build it.",
+        "A close look at your current hiring workflow and the data behind it — where candidates are dropping off, where the experience is falling flat, where recruiters are spending cycles that aren't producing better hires. Then a plan and, if you want it, the hands to build it.",
       fee: "$3,000/month stipend, or scoped project fee",
       includes: [
         "Workflow and funnel data audit",
@@ -134,7 +147,7 @@ const SERVICES = {
     {
       name: "Career Navigator",
       blurb:
-        "Ongoing career advisory for people navigating what's next — a standing monthly check-in as the market, the role, or the plan keeps shifting.",
+        "Ongoing career advisory for people navigating what's next — a standing monthly check-in as the market, the role, or the plan evolves.",
       fee: "Monthly retainer — $300/mo",
       includes: [
         "Recurring 1:1 sessions",
@@ -147,7 +160,7 @@ const SERVICES = {
     {
       name: "Contingent Search",
       blurb:
-        "Traditional search, without the traditional markup — I run the full process for a single role and you pay only when someone starts.",
+        "Traditional search, without the traditional markup. Partnering with companies on a contingent basis, with fees tied only to successful hires.",
       fee: "15% of first-year base salary",
       includes: [
         "Full-cycle sourcing through offer",
@@ -158,7 +171,7 @@ const SERVICES = {
     {
       name: "Sourcing Sprint",
       blurb:
-        "You run the process — I build it. A curated slate of vetted, top-tier candidates for a single role, delivered as a fixed-fee project.",
+        "A curated slate of vetted, top-tier candidates for a single role, delivered as a fixed-fee project. You run the process from there.",
       fee: "Flat project fee — $3,000",
       includes: [
         "Market map and outreach",
@@ -180,7 +193,7 @@ const SERVICES = {
     {
       name: "Referral",
       blurb:
-        "When I know someone great for a role I'm not running — I make the introduction and step back. Hands-off, lower cost than a full search.",
+        "For companies that don't need a full search but value a trusted introduction. KEM Talent makes the connection, then steps aside while your team manages the interview process.",
       fee: "Flat 7% fee — below contingent rate",
       includes: [
         "Warm introduction only",
@@ -274,14 +287,12 @@ function HomePage({ setPage }) {
                 marginTop: "1rem",
               }}
             >
-              Strategy of a Head of Talent.
-              <br />
-              Execution of an Embedded Recruiter.
+              Talent strategy with sleeves rolled up.
             </h1>
             <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1.05rem", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: "32rem" }}>
-              I've built recruiting functions from zero at healthtech companies through
-              acquisition, and I bring that same rigor to teams who need real hiring outcomes —
-              not another vendor relationship.
+              KEM Talent partners with growing companies that need more than another
+              recruiter. Strategic hiring guidance, hands-on execution, and an experience
+              that candidates remember for the right reasons.
             </p>
             <div className="flex gap-4 mt-8">
               <button
@@ -310,7 +321,7 @@ function HomePage({ setPage }) {
                   fontSize: "0.95rem",
                 }}
               >
-                My background
+                Learn more
               </button>
             </div>
           </div>
@@ -323,20 +334,28 @@ function HomePage({ setPage }) {
             }}
           >
             <div style={{ fontFamily: displayFont, fontSize: "1.5rem", fontWeight: 600 }}>
-              Founding recruiter.
+              Thoughtful hiring.
             </div>
             <p style={{ fontFamily: bodyFont, color: "#C7D0C9", fontSize: "0.95rem", lineHeight: 1.7, marginTop: "0.75rem" }}>
-              First dedicated TA hire at two healthtech companies — through an acquisition,
-              through hypergrowth, across technical and go-to-market hiring alike.
+              The best recruiting doesn't feel transactional. It creates clarity for hiring
+              teams, confidence for candidates, and momentum for growing companies.
             </p>
             <div style={{ height: "1px", backgroundColor: "#3A4B41", margin: "1.5rem 0" }} />
             <div style={{ fontFamily: bodyFont, color: "#8FA396", fontSize: "0.8rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              Core philosophy
+              The KEM Talent approach
             </div>
-            <p style={{ fontFamily: bodyFont, color: "#C7D0C9", fontSize: "0.95rem", lineHeight: 1.7, marginTop: "0.5rem" }}>
-              Candidate experience isn't a nice-to-have. It's the thing most hiring processes
-              quietly get wrong, and the thing I build every engagement around.
-            </p>
+            <ul style={{ marginTop: "0.6rem", display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+              {[
+                "Thoughtful search.",
+                "Transparent communication.",
+                "Candidate experiences that strengthen your brand.",
+                "Partnership built around judgment — not just process.",
+              ].map((line) => (
+                <li key={line} style={{ fontFamily: bodyFont, color: "#C7D0C9", fontSize: "0.95rem", lineHeight: 1.5 }}>
+                  {line}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -350,8 +369,8 @@ function HomePage({ setPage }) {
                 Two ways to work together
               </h2>
               <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1rem", marginTop: "0.5rem", maxWidth: "34rem" }}>
-                Some things run best as a standing partnership. Others are a clean, one-off
-                project. I built KEM Talent around both.
+                Some engagements run best as a standing partnership. Others are a clean
+                one-off project. KEM Talent is built to do both.
               </p>
             </div>
             <div
@@ -405,15 +424,15 @@ function HomePage({ setPage }) {
           {[
             {
               h: "Healthtech-native",
-              p: "Built recruiting from the ground up inside healthtech companies, including through an acquisition.",
+              p: "Experience building recruiting from the ground up inside healthtech startups, including through 2 acquisitions.",
             },
             {
-              h: "Full-cycle, both sides of the org",
-              p: "Technical and go-to-market hiring alike — not a specialist in one lane.",
+              h: "Full-cycle, all functions of the org",
+              p: "Technical, commercial/GTM, corporate, clinical and leadership hiring alike — not a specialist in one lane.",
             },
             {
               h: "Systems, not just search",
-              p: "Fluent in the tools and the data behind hiring — Juicebox, Ashby, Greenhouse, Lever, and the funnel metrics that matter.",
+              p: "Fluent in the tools and the data behind hiring: Juicebox, Ashby, Greenhouse, Lever, and the funnel metrics that matter to you.",
             },
           ].map((b) => (
             <div key={b.h}>
@@ -448,7 +467,7 @@ function AboutPage() {
     {
       org: "Consumer Reports",
       role: "Early career",
-      desc: "Where I cut my teeth in HR as Chief of Staff of the talented People leaders at this storied organization.",
+      desc: "Where Kelli cut her teeth in HR as Chief of Staff to the talented People leaders at this storied organization.",
     },
     {
       org: "ZRG Partners",
@@ -483,14 +502,20 @@ function AboutPage() {
           >
             About
           </div>
-          <h1 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "2.5rem", color: colors.ink, marginTop: "0.75rem" }}>
-            I've sat on the inside of the hiring process — as the whole department.
+          <div style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.5rem", color: colors.ink, marginTop: "0.9rem" }}>
+            Kelli Mackiewicz
+          </div>
+          <div style={{ fontFamily: bodyFont, fontWeight: 600, fontSize: "0.9rem", color: colors.brassDeep, marginTop: "0.15rem" }}>
+            Principal, KEM Talent
+          </div>
+          <h1 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "2.5rem", color: colors.ink, marginTop: "1.25rem" }}>
+            She's sat on the inside of the hiring process — as the whole department.
           </h1>
           <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1.05rem", lineHeight: 1.75, marginTop: "1.25rem" }}>
             KEM Talent exists because most companies between 25 and a few hundred people
             don't need a full talent acquisition department — they may need someone who's
             already built one, who can walk in and run recruiting like it's their own. That's
-            what I've done twice now, as the founding or first dedicated recruiter inside
+            what Kelli has done twice now, as the founding or first dedicated recruiter inside
             fast-moving healthtech startups.
           </p>
         </div>
@@ -499,7 +524,7 @@ function AboutPage() {
       <section>
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.6rem", color: colors.ink }}>
-            Where I've built
+            Where Kelli has built
           </h2>
           <div className="flex flex-col mt-8" style={{ borderLeft: `2px solid ${colors.boneDeep}` }}>
             {timeline.map((t) => (
@@ -534,13 +559,13 @@ function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
           <div>
             <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.4rem", color: colors.cream }}>
-              What makes me different
+              What makes Kelli different
             </h2>
             <ul className="flex flex-col gap-4 mt-5">
               {[
-                "Founding and sole-recruiter experience in healthtech — I've done the job with no team behind me.",
+                "Founding and sole-recruiter experience in healthtech — she's done the job with no team behind her.",
                 "Full-cycle range across all functions (commercial, technical, corporate) and levels (analyst and individual contributor through executive leadership).",
-                "I treat each candidate interaction as an opportunity to shape reputation and build advocates, not detractors.",
+                "She treats each candidate interaction as an opportunity to shape reputation and build advocates, not detractors.",
               ].map((t) => (
                 <li key={t} style={{ display: "flex", gap: "0.75rem" }}>
                   <span style={{ color: colors.brass, fontFamily: displayFont, fontWeight: 600 }}>—</span>
@@ -551,7 +576,7 @@ function AboutPage() {
           </div>
           <div>
             <h2 style={{ fontFamily: displayFont, fontWeight: 600, fontSize: "1.4rem", color: colors.cream }}>
-              Tools I work in
+              Tools Kelli works in
             </h2>
             <div className="flex flex-wrap gap-2 mt-5">
               {["Juicebox AI", "Ashby", "Greenhouse", "Lever", "Radford / Aon", "LinkedIn Recruiter", "Claude", "ChatGPT", "Copilot", "Motion"].map((t) => (
@@ -600,7 +625,7 @@ function ServicesPage() {
           <p style={{ fontFamily: bodyFont, color: colors.inkSoft, fontSize: "1.05rem", lineHeight: 1.7, marginTop: "1rem", maxWidth: "38rem" }}>
             Every engagement below can flex between a standing retainer and a fixed-fee
             project — pricing here is illustrative so you know roughly what to expect before
-            we talk specifics.
+            talking specifics.
           </p>
         </div>
       </section>
@@ -643,6 +668,7 @@ function ServicesPage() {
 }
 
 export default function KemTalentSite() {
+  useFonts();
   const [page, setPage] = useState("home");
 
   return (
